@@ -13,3 +13,16 @@ a
     color: chocolate;
     font-weight: bolder;
 }
+.jeff {
+    width: 400px;
+    font-size: 50px;
+    border-radius: 40px;
+    padding: 15px;
+    background-color: #0b7300
+}
+#magicaldivness
+{
+    width: 100%;
+    background-color: crimson;
+    height: 100px;
+}
