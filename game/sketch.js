@@ -1,8 +1,14 @@
+let playerPaddle;
+let aiPaddle;
+
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(624, 351);
+    playerPaddle = new Paddle(26);
+    aiPaddle = new Paddle(width - 46);
   }
   
   function draw() {
-    background(220);
-    ellipse(50,50,80,80);
+    background(58, 0, 99);
+    playerPaddle.display();
+    aiPaddle.display();
   }
