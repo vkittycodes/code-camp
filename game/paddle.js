@@ -13,4 +13,15 @@ class Paddle
         fill(255);
         rect(this.x, this.y, this.width, this.height);
     }
+    
+    up()
+    {
+        this.y = this.y - 2;
+    }
+
+    down()
+    {
+        this.y = height - this.height;
+    }
+
 }

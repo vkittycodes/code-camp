@@ -11,4 +11,7 @@ function setup() {
     background(58, 0, 99);
     playerPaddle.display();
     aiPaddle.display();
+
+    playerPaddle.up();
+    aiPaddle.down();
   }
