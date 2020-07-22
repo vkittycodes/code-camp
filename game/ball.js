@@ -14,7 +14,7 @@ class Ball
         ellipse(this.x, this.y, this.r * 2, this.r * 2);
     }
 
-    move()
+    move(playerPaddle)
     {
         if (this.y < this.r || this.y > (height - this.r))
         {
@@ -26,6 +26,9 @@ class Ball
 
         this.x = this.x + this.xSpeed;
         this.y = this.y + this.ySpeed;
+
+        if (this.x < (playerPaddle.x - this.r) & this.y > playerPaddle.y & this.y < (playerPaddle.y + playerPaddle.height))
+            this.xSpeed = - this.xSpeed;
     }
 
     reset()

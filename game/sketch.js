@@ -14,7 +14,7 @@ function setup() {
     playerPaddle.display();
     aiPaddle.display();
     ball.display();
-    ball.move();
+    ball.move(playerPaddle);
 
     if (playerPaddle.isUp == true)
       playerPaddle.up();
