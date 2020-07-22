@@ -14,7 +14,7 @@ class Ball
         ellipse(this.x, this.y, this.r * 2, this.r * 2);
     }
 
-    move(playerPaddle)
+    move(playerPaddle, aiPaddle)
     {
         if (this.y < this.r || this.y > (height - this.r))
         {
@@ -27,7 +27,12 @@ class Ball
         this.x = this.x + this.xSpeed;
         this.y = this.y + this.ySpeed;
 
-        if (this.x < (playerPaddle.x - this.r) & this.y > playerPaddle.y & this.y < (playerPaddle.y + playerPaddle.height))
+        //if the ball hits the playerPaddle then bounce it
+        if (this.x < (playerPaddle.x + this.r + playerPaddle.width) & this.y > playerPaddle.y & this.y < (playerPaddle.y + playerPaddle.height))
+            this.xSpeed = - this.xSpeed;
+
+        //if the ball hits the aiPaddle then bounce it
+        if (this.x > (aiPaddle.x - this.r) & this.y > aiPaddle.y & this.y < (aiPaddle.y + aiPaddle.height))
             this.xSpeed = - this.xSpeed;
     }
 

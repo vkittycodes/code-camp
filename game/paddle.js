@@ -30,4 +30,12 @@ class Paddle
 
     }
 
+    update()
+    {
+        if (this.isUp == true)
+            this.up();
+        else if (this.isDown == true)
+            this.down();
+    }
+
 }

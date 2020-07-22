@@ -11,15 +11,32 @@ function setup() {
   
   function draw() {
     background(58, 0, 99);
+
     playerPaddle.display();
     aiPaddle.display();
-    ball.display();
-    ball.move(playerPaddle);
 
-    if (playerPaddle.isUp == true)
-      playerPaddle.up();
-    else if (playerPaddle.isDown == true)
-      playerPaddle.down();
+    playerPaddle.update();
+    aiPaddle.update();
+
+    processAI()
+
+    ball.display();
+    ball.move(playerPaddle, aiPaddle);    
+  }
+
+  function processAI()
+  {
+    let middleOfPaddle = aiPaddle.y + aiPaddle.height / 2;
+    if (middleOfPaddle > ball.y)
+    {
+      aiPaddle.isUp = true;
+      aiPaddle.isDown = false;
+    }
+    else
+    {
+      aiPaddle.isDown = true;
+      aiPaddle.isUp = false;
+    }
   }
 
   function keyPressed()
