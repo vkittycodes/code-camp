@@ -3,11 +3,9 @@ class Ball
     constructor()
     {
         this.r = 10;
-        this.x = width/2;
-        this.y = height/2;
+        this.reset();
 
-        this.xSpeed = random(3, 4);
-        this.ySpeed = random(-3, 3);
+        
     }
     
     display()
@@ -22,8 +20,19 @@ class Ball
         {
             this.ySpeed = - this.ySpeed;
         }
-        
+
+        if (this.x < this.r || this.x > (width - this.r))
+            this.reset();
+
         this.x = this.x + this.xSpeed;
         this.y = this.y + this.ySpeed;
+    }
+
+    reset()
+    {
+        this.x = width/2;
+        this.y = height/2;
+        this.xSpeed = random(3, 4);
+        this.ySpeed = random(-3, 3);
     }
 }
