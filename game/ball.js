@@ -18,7 +18,16 @@ class Ball
 
     move()
     {
-        this.x = this.x + this.xSpeed;
-        this.y = this.y + this.ySpeed;
+        if (this.y < this.r || this.y > (height - this.r))
+        {
+            this.x = this.x;
+            this.y = this.y;
+        }
+        else
+        {
+            this.x = this.x + this.xSpeed;
+            this.y = this.y + this.ySpeed;
+        }
+        
     }
 }
